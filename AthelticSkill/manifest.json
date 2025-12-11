@@ -1,9 +1,9 @@
-{
+﻿{
   "$schema": "https://smapi.io/schemas/manifest.json",
   "UniqueID": "moonslime.AthleticSkill",
   "Name": "Athletics Skill",
   "Author": "moonslime",
-  "Version": "1.2.0",
+  "Version": "1.3.0",
   "Description": "Adds sprinting and buffs professions as a skill",
   "MinimumApiVersion": "4.3.2",
   "MinimumGameVersion": "1.6.15",

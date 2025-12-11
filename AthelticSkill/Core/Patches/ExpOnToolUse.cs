@@ -58,26 +58,26 @@ namespace AthleticSkill.Core.Patches
                 return;
 
             // --- Debug logging (optional) ---
-            Log.Trace($"-------------------------------");
-            Log.Trace($"Athletic's tool use exp tracker");
+            Log.Debug($"-------------------------------");
+            Log.Debug($"Athletic's tool use exp tracker");
 
             // Random roll for chance-based EXP gain
             double checkValue = Game1.random.NextDouble();
-            Log.Trace($"The check value is: {checkValue}");
+            Log.Debug($"The check value is: {checkValue}");
 
             // Base chance to gain EXP from any tool use
             int baseExpChance = ModEntry.Config.ExpChanceFromTools;
-            Log.Trace($"The base chance to get exp from using an atheltic's tool is: {baseExpChance}");
+            Log.Debug($"The base chance to get exp from using an atheltic's tool is: {baseExpChance}");
 
             // Determine difference between tool upgrade level and player's athletic level
             int difference = (__instance.UpgradeLevel * 2) - who.GetCustomSkillLevel(ModEntry.SkillID);
-            Log.Trace($"The player's tool level is: {__instance.UpgradeLevel}");
-            Log.Trace($"The player's athletic level is: {who.GetCustomSkillLevel(ModEntry.SkillID)}");
-            Log.Trace($"The difference between player's tools and level is {difference}");
+            Log.Debug($"The player's tool level is: {__instance.UpgradeLevel}");
+            Log.Debug($"The player's athletic level is: {who.GetCustomSkillLevel(ModEntry.SkillID)}");
+            Log.Debug($"The difference between player's tools and level is {difference}");
 
             // Final chance = base chance + 10% per level difference, then normalized to 0-1
             double finalChance = (baseExpChance + (difference * 10)) / 100.0;
-            Log.Trace($"Final chance is: {finalChance}");
+            Log.Debug($"Final chance is: {finalChance}");
 
             // --- Check if player fails the roll ---
             Log.Trace($"Does the check fail? {checkValue >= finalChance}");
@@ -85,7 +85,7 @@ namespace AthleticSkill.Core.Patches
                 return; // Exit if EXP roll fails
 
             // --- EXP roll passed ---
-            Log.Trace($"Check passed, EXP is gained!");
+            Log.Debug($"Check passed, EXP is gained!");
             int expToAdd = 0;
 
             // Determine EXP based on tool type
@@ -94,8 +94,8 @@ namespace AthleticSkill.Core.Patches
             else if (isHeavyTool)
                 expToAdd = ModEntry.Config.ExpFromHeavyToolUse;
 
-            Log.Trace($"Total exp gained is: {expToAdd}");
-            Log.Trace($"-------------------------------");
+            Log.Debug($"Total exp gained is: {expToAdd}");
+            Log.Debug($"-------------------------------");
 
             // Apply EXP to player if any
             if (expToAdd > 0)
