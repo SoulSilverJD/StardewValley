@@ -10,6 +10,9 @@
     "config.AlternativeSkillPageIcon": "Alternative Skill Page Icon",
     "config.AlternativeSkillPageIcon.tooltip": "REQUIRES RESTART!\nChanges the lightningbolt skill icon to a set of dumb-bells.",
 
+    "config.VerboseLogging": "Verbose Logging",
+    "config.VerboseLogging.tooltip": "Recommended to leave enabled",
+
 
     "config.Key_Cast": "Sprint Key",
     "config.Key_Cast.tooltip": "The key needed to toggle/hold for sprint.",
